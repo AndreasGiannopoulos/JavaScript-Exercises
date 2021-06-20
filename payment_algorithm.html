@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise 1</title>
+
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Ex 1 - Sequential Algorithm</h1>
+    <p>Να αναπτυχθεί πρόγραμμα σε γλώσσα JavaScript το οποίο θα διαβάζει το ημερομίσθιο ενός εργαζομένου, 
+        τις ημέρες εργασίας του τον περασμένο μήνα, τις ώρες υπερωρίας που έχει κάνει και θα εμφανίζει τις μικτές
+        αποδοχές του καθώς και τις καθαρές αποδοχές που θα λάβει το μήνα αυτό. 
+        Οι κρατήσεις στην εταιρία αυτή είναι το 20% των μικτών αποδοχών, ενώ αφαιρείται και 5% φόρος. 
+        Τέλος να αναφέρουμε ότι οι ώρες υπερωρίας αμείβονται ανά ώρα με το 15% του ημερομισθίου.
+    </p>
+    <script>
+    var dayPayment = prompt("Enter day wage: ");
+    var daysWorked = prompt("Enter workdays number: ");
+    var extraHours = prompt("Enter extra work hours: ");
+
+    var grossIncome = (dayPayment * daysWorked) + (extraHours * dayPayment * 0.15);
+    var tax = grossIncome * 0.05;
+    var deductions = grossIncome * 0.2 + tax;
+    var netIncome = grossIncome - deductions;  
+    var netIncome = netIncome.toFixed(2);
+
+    document.write("Day Payment: " + dayPayment + "<br/>");
+    document.write("Days Worked: " + daysWorked + "<br/>");
+    document.write("Extra Work Hours: " + extraHours + "<br/><hr>");
+    document.write("Gross Income: " + grossIncome + "€<br/>");
+    document.write("Net Income: " + netIncome + "€<br/>");
+    </script>
+</body>
+</html>
+
