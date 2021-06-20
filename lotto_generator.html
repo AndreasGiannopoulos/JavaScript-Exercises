@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto Generator</title>
+
+</head>
+<body>
+    <script>
+        function randomNumberGenerator1(min, max) {     
+            var number = Math.random() * (max - min + 1) + min  ;
+            number = Math.floor(number);
+            return number;
+        }
+
+        document.write("<br/>");
+
+        var lottoNumbers = [];  //1st way
+        for ( var c = 0; c < 6; c++) {
+        
+        do {
+            var ball = randomNumberGenerator1(1,49);
+        }
+        while(lottoNumbers[ball] == 1);
+           lottoNumbers[ball] = 1; 
+           
+           document.write (ball + " - ")
+        }
+
+        document.write("<hr>");
+
+        var lottoArray = [];     //2nd way
+        for (var c = 0; c < 6; c++) {
+            var number = randomNumberGenerator1(1, 49);
+            console.log(number); 
+            if (lottoArray.includes(number)) {
+                console.log("Wrong number");
+                continue;
+            }
+            lottoArray.unshift(number);
+        }
+        document.write(lottoArray);
+        
+        
+    </script> 
+
+
+</body>
+</html>
