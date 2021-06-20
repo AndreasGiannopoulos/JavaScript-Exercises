@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maza Somatos</title>
+</head>
+<body>
+    
+    <script src="js/mazaSomatos.js"></script>
+    <script>
+        var age = prompt("Insert your age");
+        if (age < 18 || age > 100) {
+            alert("Yor age must be bettween 18 and 100 years");
+            age = prompt("Insert your age");
+        }
+        else if (age = !isNaN) {
+            alert("Insert a number");
+            prompt("Insert your age");
+        }
+       
+
+        let weight = prompt("Insert your weight");
+        if (weight < 39 || weight > 200) {
+            alert ("Insert correct weight");
+            weight = prompt("Insert your weight");
+        }
+        else if (weight = !isNaN) {
+            alert("Insert a number");
+            prompt("Insert your weight");
+        }
+        
+
+        let height = prompt("Insert your height in meters, like (1.70)");
+        if (height < 1.40 || height > 2.50) {
+            alert ("Insert correct height in meters");
+            height = prompt("Insert your height");
+        }
+        else if (height = !isNaN) {
+            alert("Insert a number");
+            height = prompt("Insert your height");
+        }
+       
+
+        let calcubmi = function (weight, height) {
+            let bmi = weight / (height * height);
+            return bmi;
+        }
+
+        let yourbmi = calcubmi(weight, height);
+
+        if (yourbmi < 19.5) {
+            document.write("Your BMI is: " + yourbmi + ". And your weight zone is 'Emaciation'");
+        }
+        else if (yourbmi < 25) {
+            document.write("Your BMI is: " + yourbmi + ". And your weight zone is 'Normal Weight'");
+        }
+        else if (yourbmi < 30) {
+            document.write("Your BMI is: " + yourbmi + ". And your weight zone is '1st degree of obesity'");
+        }
+        else if (yourbmi < 40) {
+            document.write("Your BMI is: " + yourbmi + ". And your weight zone is '2nd degree of obesity'");
+        }
+        else {
+            document.write("Your BMI is: " + yourbmi + ". And your weight zone is '3rd degree of obesity'");
+        }
+    </script>
+    
+</body>
+</html>
