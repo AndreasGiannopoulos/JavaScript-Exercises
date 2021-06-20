@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW Ex3</title>
+</head>
+<body>
+
+    <script>
+            /*Δίνονται οι θερμοκρασίες ανά ημέρα για τις 28 ημέρες του ΦΕΒ 2021. Να εμφανίσετε αυτές τις θερμοκρασίες σε επτάδες μία για κάθε εβδομάδα. Στη συνέχεια να εμφανίσετε τις  5 μικρότερες θερμοκρασίες του μήνα και τις 5 μεγαλύτερες. Να υπολογίσετε επίσης τον μέσο όρο των θερμοκρασιών του μήνα. Το array με τις θερμοκρασίες δινεται:
+            var temps = [18, 18, 19, 15, 16, 14, 8, 16, 22, 21, 21, 25, 18, 17, 15, 15, 14, 18, 6, 11, 15, 8, 9, 4, 2, 15, 15, 12];*/
+
+
+        var temps = [18, 18, 19, 15, 16, 14, 8, 16, 22, 21, 21, 25, 18, 17, 15, 15, 14, 18, 6, 11, 15, 8, 9, 4, 2, 15, 15, 12];
+        var sum = 0;
+        var averageTemp;
+
+        for (var i = 0; i < temps.length; i+=7) {       //group by week
+            var weeks = temps.slice(i, i+7);
+            document.write("Week" + (i / 7 + 1) + ":" + weeks + "<br/>");
+        }
+        for (i = 0; i < temps.length; i++) {
+            sum += temps[i];
+        }
+        averageTemp = sum / temps.length;
+
+        document.write("<hr>");
+
+        temps.sort(function(a, b) {                     //sort temps
+            return a - b
+        });       
+        var lowTemp = temps.slice(0,5);
+        var highTemp = temps.slice(temps.length - 5,temps.length);
+        document.write("Minimum temperatures:" + lowTemp);
+        document.write("<br/>Maximum temperatures:" + highTemp);
+        document.write("<br/>Average temperature:" + averageTemp.toPrecision(3));
+             
+    </script>
+
+</body>
+</html>
