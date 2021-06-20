@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-shirt Proposal</title>
+    
+</head>
+<body>
+    <!-- Create a JavaScript programm tha take users name,age weight, and propose him color and size of o t-shirt -->
+
+   <script>
+       var name = prompt("Enter your name: ");
+       while (!isNaN(name) || (name === "")) {       //name validation 
+           alert("Wrong data! Please try again.");
+           name = prompt("Enter your name again ");           
+       }
+
+       var age = prompt("Enter your age: ");
+       while (age < 0 || isNaN(age) || age > 200) {  //age validation            
+           alert("Wrong data! Please try again.");
+           age = prompt("Enter your age again ");
+       }
+
+       var weight = prompt("Enter your weight: ");  
+       while (weight < 0 || isNaN(weight) || weight > 200 ) {   //weight validation 
+           alert("Wrong data! Please try again.");
+           weight = prompt("Enter your weight again ");
+       }
+
+       var colors = ["White", "Pink", "Red", "Green", "Blue", "Black"];
+       var size = ["Small", "Medium", "Large", "X-Large"];
+       var userColor = "";
+       var userSize = "";
+
+       if (age < 18) {              //age categories
+            userColor = colors[0];
+       } 
+       else if (age < 25) {
+           userColor = colors[1];
+       } 
+       else if (age < 36) {
+           userColor = colors[2];
+       }                         
+       else if (age < 46) {
+           userColor = colors[3];
+       } 
+       else if (age < 56) {
+           userColor = colors[4];
+       }               
+       else {
+           userColor = colors[5];
+       }
+
+       if (weight < 50) {           //weight categories
+           userSize = size[0];
+       }
+       else if (weight < 65) {
+           userSize = size[1];
+       }
+       else if (weight < 80) {
+           userSize = size[2];
+       }
+       else {
+           userSize = size[3];
+       }   
+       
+       
+       document.write("Hey " + name + ", it is cool to be " + age + " years old!");
+       document.write("<br/>You should buy a " + userColor + " " + userSize + " shirt");
+   </script> 
+
+</body>
+</html>
